@@ -3,7 +3,7 @@
 > 2026 müzik jenerasyonu: Suno v5 ve Udio v4 ticari olarak baskın; MusicGen, Stable Audio Open ve ACE-Step açık kaynaklı liderlik etmektedir. Teknik sorun çoğunlukla çözülmüştür. Hukuki sorun (Warner Music $ 500M anlaşması, UMG anlaşması) 2025-2026 yıllarında alanı yeniden şekillendirdi.
 
 **Type:** Build
-**Languages:** Python
+**Languages:** Python, TypeScript
 **Prerequisites:** Phase 6 · 02 (Spectrograms), Phase 4 · 10 (Diffusion Models)
 **Time:** ~75 minutes
 
@@ -169,4 +169,4 @@ music = musicgen.generate([description], duration=30)
 - [ACE-Step](https://github.com/ace-step/ACE-Step)4B tam şarkı jeneratörü açıldı, Nisan 2026.
 - [Suno v5 platform docs](https://suno.com) Ticari kalite lideri.
 - [AudioLDM2](https://arxiv.org/abs/2308.05734) Müzik + ses efektleri için gizli difüsiyon.
-- [WMG-Suno settlement coverage](https://www.musicbusinessworldwide.com/suno-warner-music-settlement/) Kasım 2025 tarihli bir önceki durum.
+- [WMG-Suno settlement coverage](https://www.musicbusinessworldwide.com/warner-music-group-settles-with-suno-strikes-first-of-its-kind-deal-with-ai-song-generator/) Kasım 2025 tarihli bir önceki durum.

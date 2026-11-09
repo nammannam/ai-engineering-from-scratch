@@ -3,7 +3,7 @@
 > Her ses ajansı iki karar üzerine yaşar veya ölür: kullanıcı şimdi konuşuyor mu, ve onlar bitti mi? VAD ilkine cevap verir. Dönüş algısı (VAD + sessizlik-sükûp + semantik uç noktası modeli) ikincine cevap verir. Yanlış yapın ve asistanınız ya kullanıcıları keser ya da asla susmaz.
 
 **Type:** Build
-**Languages:** Python
+**Languages:** Python, TypeScript
 **Prerequisites:** Phase 6 · 11 (Real-Time Audio), Phase 6 · 12 (Voice Assistant)
 **Time:** ~45 minutes
 
@@ -170,7 +170,7 @@ Baskır kural: başka bir seçeneğiniz yoksa asla enerjiye bağlı VAD'leri gö
 ## Daha Fazla Okumak
 
 - [Silero VAD](https://github.com/snakers4/silero-vad) İpucu açık VAD.
-- [Picovoice Cobra VAD](https://picovoice.ai/products/cobra/) Ticari doğruluk lideri.
+- [Picovoice Cobra VAD](https://picovoice.ai/products/voice/voice-activity-detection/) Ticari doğruluk lideri.
 - [Kyutai — Unmute + flush trick](https://kyutai.org/stt)- Sub-200 ms mühendislik hilesi.
 - [LiveKit — turn detection](https://docs.livekit.io/agents/logic/turns/) üretimdeki semantik son gösterme.
 - [WebRTC VAD](https://webrtc.googlesource.com/src/) miras alınan temel çizgi.
