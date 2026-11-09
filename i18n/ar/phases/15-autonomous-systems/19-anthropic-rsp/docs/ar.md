@@ -3,7 +3,7 @@
 > دخلت RSP v3.0 حيز التنفيذ في 24 فبراير 2026, وتستبدل سياسة 2023. التخفيف على مستويين: ما ستفعله شركة أنثروبيك بشكل أحادي مقابل ما يتم إطارته كوصية على مستوى الصناعة (بما في ذلك معايير الأمن RAND SL-4). يضيف خرائط الطريق للسلامة الحدودية وتقارير المخاطر كمستندات دائمة بدلاً من المواد المتاحة مرة واحدة. يُسقط التزام التوقف لعام 2023. يقدم عتبة AI R&D-4: بمجرد عبورها ، يجب على Anthropic نشر حالة إيجابية تحديد مخاطر التخلف والتخفيف. لا يمر (كلود أوبوس 4.6) تقول أنثروبيك في إعلان v3.0 أن "استبعاد هذا بشكل مؤكد يصبح صعباً". صنفت SaferAI RSP 2023 عند 2.2؛ وأدخلت v3.0 إلى 1.9 ، مما جعل Anthropic في فئة RSP "ضعيفة" إلى جانب OpenAI و DeepMind. استبدل العدوان الجودي التزامات 2023 الكمية؛ وإزالة شروط الإيقاف هو الحد الأشد تراجعًا.
 
 **Type:** Learn
-**Languages:** Python (stdlib, RSP threshold decision engine)
+**Languages:** Python (stdlib, RSP threshold decision engine), TypeScript
 **Prerequisites:** Phase 15 · 06 (AAR), Phase 15 · 07 (RSI)
 **Time:** ~45 minutes
 
@@ -100,6 +100,6 @@ a5-rsp-ladder
 
 - [Anthropic — Responsible Scaling Policy v3.0](https://anthropic.com/responsible-scaling-policy/rsp-v3-0) السياسة الكاملة من 32 صفحة.
 - [Anthropic — RSP v3.0 announcement](https://www.anthropic.com/news/responsible-scaling-policy-v3) ملخص للتغييرات من v2.
-- [Anthropic — Frontier Safety Roadmap](https://www.anthropic.com/research/frontier-safety) وثيقة دائمة مرتبطة من RSP v3.0.
-- [Anthropic — Risk Report: Claude Opus 4.6](https://www.anthropic.com/research/risk-report-claude-opus-4-6) التراجعية على نموذج الحدود الحالي.
+- [Anthropic — Frontier Safety Roadmap](https://www.anthropic.com/responsible-scaling-policy/roadmap) وثيقة دائمة مرتبطة من RSP v3.0.
+- [Anthropic — Risk Report: February 2026](https://www.anthropic.com/feb-2026-risk-report) استعراض على كلود أوبوس 4.6، النموذج الحدودي عندما نشرت.
 - [Anthropic — Measuring agent autonomy in practice](https://www.anthropic.com/research/measuring-agent-autonomy) يربط الذكاء الاصطناعي البحث والتطوير 4 إلى الاستقلال المقياس.
