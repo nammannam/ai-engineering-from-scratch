@@ -3,7 +3,7 @@
 > 一个代理人打电话给五个工具,三个MCP服务器, 你需要一个痕迹. 开通通讯GenAI语义公约 (v1.37及以上的稳定属性) 是2026年标准,由Datadog,Langfuse,Ariz Phoenix,OpenLLMetry和AgentOps本地支持. 这一课列出所需属性,走向跨度层次 (代理 → LLM →工具),并发送一个可以连接到任何OTel出口商的 stdlib跨度发射器.
 
 **Type:** Build
-**Languages:** Python (stdlib, OTel span emitter)
+**Languages:** Python (stdlib, OTel span emitter), TypeScript
 **Prerequisites:** Phase 13 · 07 (MCP server), Phase 13 · 08 (MCP client)
 **Time:** ~75 minutes
 
@@ -150,7 +150,7 @@ t3-span-waterfall
 | Span | "Timed operation" | A unit of work with a start, end, and attributes |
 | Trace | "Cross-span ancestry" | Tree of spans sharing a trace id |
 | SpanKind | "CLIENT / SERVER / INTERNAL" | Hints about span direction |
-| OTLP | "OpenTelemetry Line Protocol" | Wire format for exporters |
+| OTLP | "OpenTelemetry Protocol" | Wire format for exporters |
 | Opt-in content | "Prompt / completion capture" | Off by default; env var to enable |
 | traceparent | "W3C header" | Propagates trace context across services |
 | Exporter | "Backend-specific shipper" | Component that sends spans to Jaeger / Datadog / etc. |

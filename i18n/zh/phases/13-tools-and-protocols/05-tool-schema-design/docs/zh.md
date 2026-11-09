@@ -3,7 +3,7 @@
 > 模型不能知道使用时间,当正确的工具默默失败.命名,描述和参数形状在StableToolBench和MCPToolBench+等基准上导致工具选择准确度的10到20个百分点波动.本课程命名了设计规则,以分离模型可靠地选择的工具和模型错误的工具.
 
 **Type:** Learn
-**Languages:** Python (stdlib, tool schema linter)
+**Languages:** Python, TypeScript (stdlib, tool schema linter)
 **Prerequisites:** Phase 13 · 01 (the tool interface), Phase 13 · 04 (structured output)
 **Time:** ~45 minutes
 
@@ -84,7 +84,7 @@ notes_search(query)
 ### 参数设计
 
 - **Enum every closed set.** `units: "celsius" | "fahrenheit"`没有`units: string`号告诉模型可接受的价值观.
-- **Required vs optional.**其他所有选择性. 开放AI严格模式要求每个字段在`required`添加一个`is_default: true`让模型省略它.
+- **Required vs optional.**其他所有选择性. 开放AI严格模式要求每个字段在`required`输入一个选项字段作为一个结合的字段.`null`让模型发送`null`当它没有价值时.
 - **Typed IDs.** `note_id: string`很好,但添加一个`pattern`(`^note-[0-9]{8}$`) 捕捉幻觉的身份证.
 - **No overly flexible types.**避免`type: any`模型会幻觉化形状.
 - **Describe the field.** `{"type": "string", "description": "ISO 8601 date in UTC, e.g. 2026-04-22"}`描述是模型的提示的一部分.
