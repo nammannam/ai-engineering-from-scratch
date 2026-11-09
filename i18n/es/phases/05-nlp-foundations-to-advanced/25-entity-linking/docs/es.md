@@ -3,7 +3,7 @@
 > NER encontró "Paris". La entidad que vincula decide: París, Francia? Paris Hilton? Paris, Texas? Paris (el príncipe troyano)?
 
 **Type:** Build
-**Languages:** Python
+**Languages:** Python, TypeScript
 **Prerequisites:** Phase 5 · 06 (NER), Phase 5 · 24 (Coreference Resolution)
 **Time:** ~60 minutes
 
@@ -185,7 +185,7 @@ Refuse any EL pipeline without a mention-recall baseline (you cannot evaluate a 
 
 ## Leer más
 
-- [Milne, Witten (2008). Learning to Link with Wikipedia](https://www.cs.waikato.ac.nz/~ihw/papers/08-DM-IHW-LearningToLinkWithWikipedia.pdf) el enfoque fundamental de prioridad+contexto.
+- [Milne, Witten (2008). Learning to Link with Wikipedia](https://researchcommons.waikato.ac.nz/entities/publication/b9a0b520-abc5-47c5-a86a-da6c579893ab) el enfoque fundamental de prioridad+contexto.
 - [Wu et al. (2020). Zero-shot Entity Linking with Dense Entity Retrieval (BLINK)](https://arxiv.org/abs/1911.03814) el caballo de trabajo basado en el embebimiento.
 - [De Cao et al. (2021). Autoregressive Entity Retrieval (GENRE)](https://arxiv.org/abs/2010.00904) EL generativo con decodificación restringida.
 - [Hoffart et al. (2011). Robust Disambiguation of Named Entities in Text (AIDA)](https://www.aclweb.org/anthology/D11-1072.pdf) el documento de referencia.

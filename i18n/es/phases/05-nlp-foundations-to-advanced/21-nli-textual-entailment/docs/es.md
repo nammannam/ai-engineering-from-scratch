@@ -3,7 +3,7 @@
 > "t implica h" significa que una lectura humana t concluiría que h es verdad. NLI es la tarea de predecir implicación / contradicción / neutral.
 
 **Type:** Learn
-**Languages:** Python
+**Languages:** Python, TypeScript
 **Prerequisites:** Phase 5 · 05 (Sentiment Analysis), Phase 5 · 13 (Question Answering)
 **Time:** ~60 minutes
 
@@ -71,7 +71,7 @@ print(result)
 #  {'label': 'contradiction', 'score': 0.01}]
 ```
 
-Para las NLI de producción, `facebook/bart-large-mnli`y `microsoft/deberta-v3-large-mnli`DeBERTa-v3 está en las listas de clasificación.
+Para las NLI de producción, `facebook/bart-large-mnli`y `MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli`DeBERTa-v3 está en las listas de clasificación.
 
 ### Paso 2: Clasificación de disparos cero
 
@@ -118,7 +118,7 @@ La pila de 2026:
 
 | Use case | Model |
 |---------|-------|
-| General-purpose NLI | `microsoft/deberta-v3-large-mnli` |
+| General-purpose NLI | `MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli` |
 | Fast / edge | `cross-encoder/nli-deberta-v3-base` |
 | Zero-shot classification (lightweight) | `facebook/bart-large-mnli` |
 | Document-level NLI | `MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli` |
