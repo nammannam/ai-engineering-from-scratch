@@ -3,7 +3,7 @@
 > لا يحصل الوكيل على وضع علامة على عمله الخاص كما هو قد تم. بوابة التحقق تقرأ عقد النطاق، سجل المراجعة، تقرير القواعد، والفروق، وتجيب على سؤال واحد: هل هذه المهمة قد اكتملت فعلا؟ إذا قال البوابة لا، فإن المهمة لم يتم، بغض النظر عن ما يقول الدردشة.
 
 **Type:** Build
-**Languages:** Python (stdlib)
+**Languages:** Python (stdlib), TypeScript
 **Prerequisites:** Phase 14 · 33 (Rules), Phase 14 · 36 (Scope), Phase 14 · 37 (Feedback)
 **Time:** ~55 minutes
 
@@ -81,13 +81,14 @@ wb-gate-sequence
 
 ```
 python3 code/main.py
+npx tsx code/main.ts
 ```
 
 الناتج: ثلاثة تقارير حكم، كل حفظ بجوار السيناريو.
 
 ## أنماط الإنتاج في البرية
 
-أربعة أنماط ترفع البوابة من "عمل آخر من اللون" إلى "الحافة القصوى".
+خمسة أنماط ترفع البوابة من "عمل آخر من الشعر" إلى "الحافة القصوى".
 
 **Defense-in-depth, not single gate.**كوكب ما قبل الالتزام → تحقق حالة CI → كوكب ما قبل الأداة authz → بوابة ما قبل الاندماج. كل طبقة تحدد لذلك يتم القبض على فشل في طبقة واحدة من قبل الطبقة التالية. كتاب لعبة مارس 2026 من microservices.io واضح: الكوكب ما قبل الالتزام غير قابل للتجاوز لأنه ، على عكس مهارة جانب النموذج ، لا يعتمد على الوكيل يتبع التعليمات. بوابة التحقق تقع عند طبقة CI / pre-merge.
 
@@ -140,7 +141,6 @@ python3 code/main.py
 - [Type-Checked Compliance: Deterministic Guardrails (arXiv 2604.01483)](https://arxiv.org/pdf/2604.01483) الركبة 4 كحدود أعلى من البوابات المحددة
 - [logi-cmd/agent-guardrails — merge gate spec](https://github.com/logi-cmd/agent-guardrails) نطاق + بوابات اختبار الطفرات
 - [Guardrails AI x MLflow](https://guardrailsai.com/blog/guardrails-mlflow) مؤكدون تحديديات كمسجلين للمعايير
-- [Akira, Real-Time Guardrails for Agentic Systems](https://www.akira.ai/blog/real-time-guardrails-agentic-systems)بوابات ما قبل/ بعد الأدوات
 - المرحلة 14 · 27  الدفاعات المسرعة للحقن (زوج المواجهة في البوابة)
 - المرحلة 14 · 36  العقد الذي تنفذه هذه البوابة
 - المرحلة 14 · 37  سجل الملاحظات هذا البوابة تسجل
