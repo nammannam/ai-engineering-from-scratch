@@ -1,9 +1,9 @@
 # FIPA-ACL Mirası ve Konuşma Aktı
 
-> MCP'den önce, A2A'dan önce, FIPA-ACL vardı. 2000 yılında Akıllı Fiziksel Ajanlar için IEEE Vakfı, yirmi performatif, iki içerik dili ve bir dizi etkileşim protokolü ile bir ajan iletişim dili onayladı  sözleşme net, abonelik/bilgi, talep-ne zaman. Endüstriye düştü çünkü ontoloji genel masrafları web için çok ağırydı, ancak çoklu ajan sistemlerinin LLM canlanımı resmi semantik olmadan sessizce aynı fikirleri yeniden uyguluyor: JSON sözleşmeleri performatifler için, doğal dil ontolojiler için yer almaktadır. Bu ders, FIPA-ACL'yi ciddiye alır, böylece 2026 protokolü kararlarının hangi yenilikleri yeniden icat ettiğini ve bugünkü dalgaların 2000'lerde çözülen sorunları yeniden keşfetmeye çalıştığını görebilirsiniz.
+> MCP'den önce, A2A'dan önce, FIPA-ACL vardı. 2000 yılında Akıllı Fiziksel Ajanlar Vakfı (FIPA, 2005 yılında IEEE Bilgisayar Topluluğu standart komitesi haline geldi) yirmi performatif, iki içerik dili ve bir dizi etkileşim protokolü ile bir ajan iletişim dili onayladı  sözleşme net, abonelik / bildirim, talep-ne zaman. Endüstriye düştü çünkü ontoloji genel masrafları web için çok ağırydı, ancak çoklu ajan sistemlerinin LLM canlanımı resmi semantik olmadan sessizce aynı fikirleri yeniden uyguluyor: JSON sözleşmeleri performatifler için, doğal dil ontolojiler için yer almaktadır. Bu ders, FIPA-ACL'yi ciddiye alır, böylece 2026 protokolü kararlarının hangi yenilikleri yeniden icat ettiğini ve bugünkü dalgaların 2000'lerde çözülen sorunları yeniden keşfetmeye çalıştığını görebilirsiniz.
 
 **Type:** Learn
-**Languages:** Python (stdlib)
+**Languages:** Python (stdlib), TypeScript
 **Prerequisites:** Phase 16 · 01 (Why Multi-Agent)
 **Time:** ~60 minutes
 
@@ -107,7 +107,7 @@ Liu et al. tarafından 2025 tarihli araştırması ("A Survey of Agent Interoper
 - JSON-devde gelen payloadlar, her modern araçla uyumludur.
 - LLM'lerin el kodlanmış ontoloji olmadan yorumlayabileceği doğal dil içerikleri.
 - Web-stack taşımacılığı (HTTP, SSE, WebSocket).
-- Kendini tanımlayan belgeler yoluyla yetenek keşfi (MCP `listTools`A2A Ajan Kartı .
+- Canlı MCP üzerinden yetenek keşfi `server/discover`A2A Ajan Kartları.
 
 Daha kolay uygulanmak için gevşek niyet semantikası.
 
@@ -160,6 +160,7 @@ sw-contract-net
 
 ```
 python3 code/main.py
+npx tsx code/main.ts
 ```
 
 Çıktı, her modern mesajı hem 2026 JSON formunda hem de FIPA-ACL formunda, ardından bir sözleşme ağ teklifinin bir geri dönüş yolu gösterir. Aynı protokol ilkesi geri dönüş yolu hayatta kalır; sadece sentezi farklıdır.
@@ -193,7 +194,7 @@ Bu beş soruyu, yeni bir protokol için üretime göndermeden önce belgeleyin.
 | Term | What people say | What it actually means |
 |------|----------------|------------------------|
 | Speech act | "An utterance that does something" | Austin/Searle: utterances as actions. The theoretical parent of ACL. |
-| FIPA | "That old XML thing" | IEEE Foundation for Intelligent Physical Agents. Standardized ACL in 2000. |
+| FIPA | "That old XML thing" | Foundation for Intelligent Physical Agents. Standardized ACL in 2000; became an IEEE Computer Society standards committee in 2005. |
 | ACL | "Agent Communication Language" | FIPA's envelope format: performative + content + metadata. |
 | Performative | "The verb" | The intent class of a message: `inform`, `request`, `propose`, `cfp`, etc. |
 | KQML | "FIPA's predecessor" | Knowledge Query and Manipulation Language (1993). Simpler, narrower. |
@@ -207,5 +208,5 @@ Bu beş soruyu, yeni bir protokol için üretime göndermeden önce belgeleyin.
 - [Liu et al. — A Survey of Agent Interoperability Protocols: MCP, ACP, A2A, ANP](https://arxiv.org/html/2505.02279v1) Modern özellikleri FIPA mirası ile bağlayan 2025 Kanonik Anket
 - [FIPA ACL Message Structure Specification (fipa00037)](http://www.fipa.org/specs/fipa00037/) Ratifik edilmiş 2000 zarfı biçimi
 - [FIPA Communicative Act Library Specification (fipa00037)](http://www.fipa.org/specs/fipa00037/) Tam performans kataloğu
-- [MCP specification 2025-11-25](https://modelcontextprotocol.io/specification/2025-11-25) modern araç kullanımı eşdeğeri `request`- Ne ?`query-ref`
+- [MCP specification 2026-07-28](https://modelcontextprotocol.io/specification/2026-07-28) mevcut devletsiz araç kullanımı eşdeğeri `request`- Ne ?`query-ref`
 - [A2A specification](https://a2a-protocol.org/latest/specification/) Modern ajan-e eşdeğerlik sözleşme-net ve abone-bilgi
