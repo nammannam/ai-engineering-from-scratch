@@ -3,7 +3,7 @@
 > Ses, 16-48 kHz'de 1 boyutlu bir sinyaldir. Beş saniyelik bir klip 80-240k örneklerdir. Hiçbir transformatör bu sıraya doğrudan katılmaz. 2026'da her üretim ses modeli için çözüm aynıdır: bir sinir kodeksi (Encodec, SoundStream, DAC) sesini ayrı jetonlara 50-75 Hz'de sıkıştırır ve bir transformatör veya difüzyon modeli jetonları üretir.
 
 **Type:** Build
-**Languages:** Python
+**Languages:** Python, TypeScript
 **Prerequisites:** Phase 6 · 02 (Audio Features), Phase 6 · 04 (ASR), Phase 8 · 06 (DDPM)
 **Time:** ~45 minutes
 
@@ -145,4 +145,4 @@ Ses, kullanıcıların * üretildiği gibi * * * * * * * * * * * * * * * * * * *
 - [Wang et al. (2023). Neural Codec Language Models are Zero-Shot Text to Speech Synthesizers (VALL-E)](https://arxiv.org/abs/2301.02111)- VALL-E.
 - [Copet et al. (2023). Simple and Controllable Music Generation (MusicGen)](https://arxiv.org/abs/2306.05284) MusicGen.
 - [Liu et al. (2023). AudioLDM 2: Learning Holistic Audio Generation with Self-supervised Pretraining](https://arxiv.org/abs/2308.05734) AudioLDM 2.
-- [Stability AI (2024). Stable Audio 2.5](https://stability.ai/news/introducing-stable-audio-2-5) 2025 akış eşleşmesi ile müziklere metin.
+- [Stability AI (2025). Stable Audio 2.5](https://stability.ai/news-updates/stability-ai-introduces-stable-audio-25-the-first-audio-model-built-for-enterprise-sound-production-at-scale) 2025 akış eşleşmesi ile müziklere metin.
