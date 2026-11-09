@@ -3,7 +3,7 @@
 > كل وكيل صوتي يعيش أو يموت على قرارين: هل يتحدث المستخدم الآن، وهل انتهوا؟ VAD يجيب على الأول. تحديد التحول (VAD + صمت-توقف + نموذج نقطة نهاية معنوية) يجيب على الثاني. إما أن تكون خاطئة ومساعدك إما يقطع المستخدمين أو لا يخرس أبدا.
 
 **Type:** Build
-**Languages:** Python
+**Languages:** Python, TypeScript
 **Prerequisites:** Phase 6 · 11 (Real-Time Audio), Phase 6 · 12 (Voice Assistant)
 **Time:** ~45 minutes
 
@@ -170,7 +170,7 @@ def flush_on_end(stt_client, audio_buffer):
 ## المزيد من القراءة
 
 - [Silero VAD](https://github.com/snakers4/silero-vad) إفتتاح المرجعية VAD.
-- [Picovoice Cobra VAD](https://picovoice.ai/products/cobra/) قائد الدقة التجارية.
+- [Picovoice Cobra VAD](https://picovoice.ai/products/voice/voice-activity-detection/) قائد الدقة التجارية.
 - [Kyutai — Unmute + flush trick](https://kyutai.org/stt)خدعة الهندسة تحت 200 م.
 - [LiveKit — turn detection](https://docs.livekit.io/agents/logic/turns/) التوصل إلى نهاية تعريفية في الإنتاج.
 - [WebRTC VAD](https://webrtc.googlesource.com/src/) خط أساسي المتكرر

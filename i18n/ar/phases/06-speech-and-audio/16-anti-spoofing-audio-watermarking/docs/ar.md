@@ -3,7 +3,7 @@
 > يتم شحن نسخ الصوت أسرع من الدفاعات. تحتاج أنظمة الصوت الإنتاجية لعام 2026 إلى شيئين: جهاز كشف (AASIST ، RawNet2) الذي يصنف الخطاب الحقيقي مقابل الكلام المزيف ، و علامة مائية (AudioSeal) التي تتعافى من الضغط والتحرير. شحن كل من أو لا شحن نسخ الصوت.
 
 **Type:** Build
-**Languages:** Python
+**Languages:** Python, TypeScript
 **Prerequisites:** Phase 6 · 06 (Speaker Recognition), Phase 6 · 08 (Voice Cloning)
 **Time:** ~75 minutes
 
@@ -193,4 +193,4 @@ def safe_tts(text, voice, clone_reference=None):
 - [Chen et al. (2025). WaveVerify](https://arxiv.org/abs/2507.21150)جهاز كشف الجهاز المتحرك للهجمات الزمنية
 - [Jung et al. (2022). AASIST](https://arxiv.org/abs/2110.01200)العمود الفقري للكشف عن SOTA
 - [AudioMarkBench (2024)](https://proceedings.neurips.cc/paper_files/paper/2024/file/5d9b7775296a641a1913ab6b4425d5e8-Paper-Datasets_and_Benchmarks_Track.pdf) تقييم الصمود
-- [C2PA specification](https://c2pa.org/specifications/specifications/) صيغة بيان المصلحة.
+- [C2PA specification](https://spec.c2pa.org/specifications/specifications/2.4/index.html) صيغة بيان المصلحة.

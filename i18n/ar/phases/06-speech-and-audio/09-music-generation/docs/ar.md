@@ -3,7 +3,7 @@
 > 2026 الجيل الموسيقي: سونو v5 و Udio v4 يهيمنون على التجارية. MusicGen ، Stable Audio Open ، و ACE-Step يؤدون المصدر المفتوح. المشكلة الفنية حُلَّت في الغالب. المشكلة القانونية (Warner Music 500 مليون دولار تسوية ، UMG تسوية) أعادت تشكيل المجال في 2025-2026.
 
 **Type:** Build
-**Languages:** Python
+**Languages:** Python, TypeScript
 **Prerequisites:** Phase 6 · 02 (Spectrograms), Phase 4 · 10 (Diffusion Models)
 **Time:** ~75 minutes
 
@@ -169,4 +169,4 @@ music = musicgen.generate([description], duration=30)
 - [ACE-Step](https://github.com/ace-step/ACE-Step)-فتح مولد 4B كامل الأغاني، أبريل 2026.
 - [Suno v5 platform docs](https://suno.com) قائد الجودة التجارية
 - [AudioLDM2](https://arxiv.org/abs/2308.05734) انتشار غامض للموسيقى + تأثيرات الصوت.
-- [WMG-Suno settlement coverage](https://www.musicbusinessworldwide.com/suno-warner-music-settlement/) نوفمبر 2025 سابقة.
+- [WMG-Suno settlement coverage](https://www.musicbusinessworldwide.com/warner-music-group-settles-with-suno-strikes-first-of-its-kind-deal-with-ai-song-generator/) نوفمبر 2025 سابقة.
