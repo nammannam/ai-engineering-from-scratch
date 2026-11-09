@@ -3,7 +3,7 @@
 > यदि आप एक ही समय में अपने रिट्रीवर और अपने उत्तर को ग्रेड नहीं कर सकते हैं, तो आप सिस्टम को भेज नहीं सकते। दोनों एक ही मीट्रिक नहीं हैं और एक ही प्रॉम्प्ट अलग-अलग अक्षों पर विफलता है।
 
 **Type:** Build
-**Languages:** Python
+**Languages:** Python, TypeScript
 **Prerequisites:** Phase 11 lessons 06 (RAG), 10 (evaluation); Phase 19 Track B foundations (lessons 20-29); Phase 19 lessons 64, 65, 66, 67
 **Time:** ~90 minutes
 
@@ -121,6 +121,7 @@ ci-rag-metric-ladder
 
 ```bash
 python3 code/main.py
+npx tsx code/main.ts
 ```
 
 आउटपुट एक एकल मीट्रिक तालिका में प्रत्येक संस्करण के लिए सटीकता@k, recall@k, MRR, nDCG@k, वफादारी और उत्तर प्रासंगिकता दिखाता है। हाइब्रिड रिकवरी पंक्ति रिकॉल पर चंकर बेसलाइन से बेहतर है; रीरैंक पंक्ति MRR पर हाइब्रिड से बेहतर है।
@@ -182,7 +183,7 @@ python3 code/main.py
 - बक्ले, वोरहीज, "मूल्यांकन उपाय स्थिरता का मूल्यांकन", SIGIR 2000 - रैंकिंग मीट्रिक पर कैनोनिक पेपर
 - Jarvelin, Kekalainen, "एडवीटी तकनीक का संचित लाभ आधारित मूल्यांकन" - nDCG पेपर
 - [Ragas: Automated Evaluation of RAG Pipelines](https://docs.ragas.io)
-- [Anthropic, Evaluating RAG](https://www.anthropic.com/news/evaluating-rag)
+- [Anthropic, Introducing Contextual Retrieval](https://www.anthropic.com/engineering/contextual-retrieval)- 1 - रिकॉल@20 के साथ रिकवरी स्कोर करता है
 - चरण 11 पाठ 10 - मूल्यांकन ढांचे की नींव
 - चरण 19 पाठ 64-67 - यहां मूल्यांकन किए गए घटक
 - चरण 19 पाठ 69 - अंत से अंत पाइपलाइन इस मूल्यांकन ग्रेड
