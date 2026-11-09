@@ -3,7 +3,7 @@
 > El agente no puede marcar su propio trabajo como hecho. Una puerta de verificación lee el contrato de alcance, el registro de retroalimentación, el informe de reglas y el dif, y responde a una sola pregunta: ¿está realmente completa esta tarea?
 
 **Type:** Build
-**Languages:** Python (stdlib)
+**Languages:** Python (stdlib), TypeScript
 **Prerequisites:** Phase 14 · 33 (Rules), Phase 14 · 36 (Scope), Phase 14 · 37 (Feedback)
 **Time:** ~55 minutes
 
@@ -81,13 +81,14 @@ wb-gate-sequence
 
 ```
 python3 code/main.py
+npx tsx code/main.ts
 ```
 
 Resultado: tres informes de veredicto, cada uno guardado junto al guión.
 
 ## Modelos de producción en la naturaleza
 
-Cuatro patrones elevan la puerta de "otro trabajo de peludo" a "el borde decisivo".
+Cinco patrones elevan la puerta de "otro trabajo de peludo" a "el borde decisivo".
 
 **Defense-in-depth, not single gate.**El gancho precomit → verificación del estado de CI → gancho pre-herramienta authz → gancho pre-merger. Cada capa es determinista por lo que un fallo en una capa es atrapado por la siguiente. el libro de juego de marzo de 2026 de microservices.io es explícito: el gancho precomit es impensable porque, a diferencia de una habilidad del lado del modelo, no depende del agente que sigue las instrucciones.
 
@@ -140,7 +141,6 @@ La puerta es el borde decisivo en el flujo del banco de trabajo.
 - [Type-Checked Compliance: Deterministic Guardrails (arXiv 2604.01483)](https://arxiv.org/pdf/2604.01483) Lean 4 como el límite superior de la cerradura determinista
 - [logi-cmd/agent-guardrails — merge gate spec](https://github.com/logi-cmd/agent-guardrails) alcance + puertas de prueba de mutaciones
 - [Guardrails AI x MLflow](https://guardrailsai.com/blog/guardrails-mlflow) Validadores deterministas como puntuación de CI
-- [Akira, Real-Time Guardrails for Agentic Systems](https://www.akira.ai/blog/real-time-guardrails-agentic-systems) Puertas de pre-o post-herramienta
 - Fase 14 · 27  Defensa de inyección rápida (par adversarial de la puerta)
 - Fase 14 · 36  el contrato de alcance que esta puerta ejecuta
 - Fase 14 · 37  el registro de retroalimentación este portal marca
