@@ -3,7 +3,7 @@
 > La descifrado especulativo combina un modelo de proyecto rápido con el modelo objetivo. El proyecto propone tokens K; el objetivo se verifica en un solo plazo; los tokens aceptados son gratuitos. En 2026, EAGLE-3 es la variante de grado de producción  que entrena a un draft head en los estados ocultos del modelo objetivo en lugar de en tokens crudos, empujando la tasa de aceptación alfa en la banda de 0.6-0.8 en el chat general. La pregunta correcta no es "qué tan rápido es el borrador" sino "qué es el alfa en mi tráfico?" Si el alfa cae por debajo de ~0.55, la descifrado especulativo es negativo neto a alta concurrencia porque cada borrador rechazado cuesta un segundo pase al frente objetivo. Esta lección te enseña a medir el alfa primero y a voltear la bandera segundo.
 
 **Type:** Learn
-**Languages:** Python (stdlib, toy acceptance-rate simulator)
+**Languages:** Python, TypeScript (stdlib, toy acceptance-rate simulator)
 **Prerequisites:** Phase 17 · 04 (Serving Engine Internals), Phase 10 · 18 (Multi-Token Prediction)
 **Time:** ~60 minutes
 
@@ -16,7 +16,7 @@
 
 ## El problema
 
-El decodificación es de memoria. En un H100 que ejecuta Llama 3.3 70B FP8, cada token decodificado lee ~140 GB / s de pesos y emite un token. El cálculo de la GPU es casi ocioso durante el decodificación.
+El decodificación es de memoria. En un H100 que ejecuta Llama 3.3 70B FP8, cada paso de decodificación lee todos los ~70 GB de pesos de HBM y emite un token por secuencia. El cálculo de la GPU es casi ocioso durante el decodificación.
 
 La descifrado especulativo explota la brecha. Generar tokens candidatos K con un modelo de borrador barato, luego pedir al modelo objetivo para verificar todos K en un solo pase hacia adelante. Cada token verificado es efectivamente libre (amortizado en un lote de K hacia adelante el objetivo habría tenido que hacer de todos modos).
 
@@ -34,7 +34,7 @@ Sin el decodificación de especificaciones, el costo por token es un objetivo ha
 
 Los tokens rechazados no desaparecen  obligan a un segundo objetivo a avanzar para el primer token rechazado. En una carga de trabajo donde el alfa baja a 0,4, pagas gastos generales de proyecto más verificación más re-roll. En alta concurrencia (digamos 256 concurrencias), el lote de decodificación ya es lo suficientemente grande como para que la brecha de ancho de banda de memoria entre "target solo" y "target con verificar" se reduzca. Por debajo de alfa 0.55 en la mayoría de los equipos de 2026, el código de especificaciones es negativo neto.
 
-En el chat general de estilo ShareGPT, EAGLE-3 entrenado en ShareGPT alcanza 0.6-0.8. En el tráfico específico del dominio (código, médico, legal) el jefe de redacción entrenado en datos generales cae a 0.4-0.6.
+Alfa varía según la carga de trabajo. En el chat general de estilo ShareGPT, EAGLE-3 entrenado en ShareGPT alcanza 0.6-0.8. En el tráfico específico de dominio (código, médico, legal) el jefe de proyecto entrenado en datos generales cae a 0,4-0,6. El entrenamiento de un jefe de recarga específico de dominio recupera alfa  es un trabajo de entrenamiento ligero y rápido en comparación con la finalización de objetivos. La fase 7 · 16 y la fase 10 · 15 citan valores más altos (0,85 y superior). Esas son tasas por token en los puntos de referencia de chat que coinciden con los datos de entrenamiento del borrador. Planifique con las bandas de esta página y mide el alfa en su propio tráfico.
 
 ### Las generaciones de águila en un vistazo
 
@@ -57,7 +57,7 @@ El P99 puede empeorar si no se sintoniza. Los proyectos rechazados desencadenan 
 
 ### Cuando EAGLE-3 ya esté desplegado
 
-Google desplegó la descodificación especulativa en AI Overviews en 2025 (la misma calidad, respuesta más rápida). vLLM V1 barcos `speculative_config`como la interfaz documentada; la descifrado especulativo de GPU de N-gram en V1 es la variante compatible con preempleo en pedazos. SGLang admite EAGLE-3 como la ruta de proyecto recomendada para cargas de trabajo pesadas de prefijos.
+Google desplegó la descodificación especulativa en AI Overviews en 2025 (la misma calidad, respuesta más rápida). vLLM V1 barcos `speculative_config`SGLang admite EAGLE-3 como la ruta de proyecto recomendada para cargas de trabajo pesadas de prefijos.
 
 ### Matemáticas de equilibrio en una línea
 
@@ -68,7 +68,7 @@ Aceleración esperada: `S(alpha, K) = (1 + K*alpha) / (1 + verify_overhead)`- Co
 - Generación de batch-1 sin conexión donde la latencia no importa.
 - Los resultados son muy cortos (menos de 50 tokens).
 - Dominio especializado sin un jefe de reclutamiento entrenado.
-- vLLM v0.18.0 más el código de especificaciones del modelo de proyecto más `--enable-chunked-prefill`Esta combinación no se compiló. La excepción documentada es el decodificación de especificaciones de GPU de N-gram en V1.
+- Suponiendo que cada par de características compone. Compruebe la matriz de compatibilidad vLLM para su versión: v0.18.0 marca la descifrado especulativo compatible con preempleo en pedazos.
 
 ```figure
 mx-speculative-tree
@@ -86,7 +86,7 @@ Esta lección produce`outputs/skill-eagle3-rollout.md`. Dado un modelo objetivo,
 
 1. - ¿ Qué ?`code/main.py`¿Qué alfa necesitas para un 2x de aceleración? ¿Para un 3x de aceleración? ¿Qué tan sensible es eso para verificar_overhead?
 2. Imagínese que el tráfico de producción divide el 70% de chat general, el 30% de código. El chat general alcanza el alfa 0.7 con EAGLE-3 entrenado en ShareGPT; el código alcanza el alfa 0.4. ¿Qué es alfa mezclado y es el código de descodación de especificaciones net-positivo?
-3. Lea el VLLM `speculative_config`En el caso de los Estados miembros, el número de datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los que se han introducción de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los datos de los
+3. Lea el VLLM `speculative_config`Nombrar los tres modos (modelo de borrador, EAGLE, N-gram) y comprobar cuáles son las características de cada uno de ellos en su versión vLLM.
 4. Vemos que la media ITL cayó un 25% después de habilitar EAGLE-3 pero P99 ITL subió un 15%.
 5. Calcule el costo de memoria de la cabeza de proyección EAGLE-3 para Llama 3.3 70B. ¿Cómo se compara con ejecutar Llama 3.2 1B como un proyecto clásico?
 
