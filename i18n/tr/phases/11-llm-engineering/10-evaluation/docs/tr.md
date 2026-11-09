@@ -3,7 +3,7 @@
 > Test olmadan hiçbir web uygulamasını uygulamaya koyamazsın. Bir geri dönüş planı olmadan bir veritabanı göçünü asla göndermezsin. Ama şu anda, çoğu ekip 10 çıkış okuyarak ve "Evet, iyi görünüyor" diyerek LLM başvurularını gönderir. Bu değerlendirme değil. Bu umut. Umut bir mühendislik uygulaması değil. Her hızlı değişiklik, her model değişimi, her sıcaklık ayarı, bir avuç örneği okuyarak tahmin edemeyeceğiniz şekilde çıkış dağılımınızı değiştirir. Başvurunuzla sessiz bozulma arasında tek şey değerlendirme.
 
 **Type:** Build
-**Languages:** Python
+**Languages:** Python, TypeScript
 **Prerequisites:** Phase 11 Lesson 01 (Prompt Engineering), Lesson 09 (Function Calling)
 **Time:** ~45 minutes
 **Related:**5 · 27 aşaması (LLM Değerlendirme  RAGAS, DeepEval, G-Eval) çerçeve düzeyde kavramları kapsar (NLI tabanlı sadakat, yargıç kalibrasyonu, RAG dört). 5 · 28 aşaması (Uzun bağlam değerlendirme) bağlam uzunluğu gerileme için NIAH / RULER / LongBench / MRCR kapsar. Bu ders LLM mühendisliği spesifik olanlara odaklanır: CI / CD entegrasyonu, maliyetli değerlendirme çalışmalar, gerileme tabloları.
@@ -856,7 +856,7 @@ Ayrıca üretir `outputs/skill-eval-patterns.md`-- kullanımı durumunuza, büt�
 - [DeepEval Documentation](https://docs.confident-ai.com)-- 14+ metrik, Pytest entegrasyonu ve halüsinasyon algılama ile Python-native eval framework
 - [Braintrust Eval Guide](https://www.braintrust.dev/docs)-- deney izleme, puanlama fonksiyonları ve veri kümesi yönetimi ile üretim değerlendirme platformu
 - [Ribeiro et al., 2020 -- "Beyond Accuracy: Behavioral Testing of NLP Models with CheckList"](https://arxiv.org/abs/2005.04118)-- LLM değerlendirme için uygulanacak sistematik davranışsal test metodolojisi (minimum işlevsellik, değişmezlik, yön beklentileri)
-- [LMSYS Chatbot Arena](https://chat.lmsys.org)-- kullanıcıların model sonuçları için oy kullandığı canlı insan değerlendirme platformu, LLM için en büyük çiftliksel karşılaştırma verisi
+- [Arena (formerly LMSYS Chatbot Arena)](https://arena.ai/)-- kullanıcıların model sonuçları için oy kullandığı canlı insan değerlendirme platformu, LLM için en büyük çiftliksel karşılaştırma verisi
 - [Es et al., "RAGAS: Automated Evaluation of Retrieval Augmented Generation" (EACL 2024 demo)](https://arxiv.org/abs/2309.15217)-- RAG için referanssız ölçümler (davranışlılık, cevapların uygunluğu, bağlamsal doğruluk/içindirme); etiketleme olmadan prod için ölçeklendiren değerlendirme örneği.
 - [Liu et al., "G-Eval: NLG Evaluation using GPT-4 with Better Human Alignment" (EMNLP 2023)](https://arxiv.org/abs/2303.16634)-- düşünce zinciri + form doldurma bir yargıç protokolü olarak; kalibrasyon ve önyargı sonuçları her yargıç-yapıcı ihtiyaçları.
 - [Hugging Face LLM Evaluation Guidebook](https://huggingface.co/spaces/OpenEvals/evaluation-guidebook)- Open LLM Leaderboard'u sürdüren ekibin veri kirliliği, metrik seçimi ve yeniden üretilebilirliği konusunda pratik tavsiyesi.
