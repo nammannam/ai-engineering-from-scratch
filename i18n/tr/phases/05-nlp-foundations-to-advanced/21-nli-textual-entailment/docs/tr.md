@@ -3,7 +3,7 @@
 > "t h içerir" anlamı, t'nin insan okuma sonucu olarak h doğru olduğu anlamına gelir. NLI, içerme / çelişki / tarafsızlık öngörme görevi.
 
 **Type:** Learn
-**Languages:** Python
+**Languages:** Python, TypeScript
 **Prerequisites:** Phase 5 · 05 (Sentiment Analysis), Phase 5 · 13 (Question Answering)
 **Time:** ~60 minutes
 
@@ -71,7 +71,7 @@ print(result)
 #  {'label': 'contradiction', 'score': 0.01}]
 ```
 
-Üretim NLI için, `facebook/bart-large-mnli`ve `microsoft/deberta-v3-large-mnli`DeBERTa-v3 sıralama çizelgeleri üstündedir.
+Üretim NLI için, `facebook/bart-large-mnli`ve `MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli`DeBERTa-v3 sıralama çizelgeleri üstündedir.
 
 ### Adım 2: sıfır atış sınıflandırması
 
@@ -118,7 +118,7 @@ Bakın .`code/main.py`Sadece stdlib oyuncak için: premise ve hipotezi leksik ü
 
 | Use case | Model |
 |---------|-------|
-| General-purpose NLI | `microsoft/deberta-v3-large-mnli` |
+| General-purpose NLI | `MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli` |
 | Fast / edge | `cross-encoder/nli-deberta-v3-base` |
 | Zero-shot classification (lightweight) | `facebook/bart-large-mnli` |
 | Document-level NLI | `MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli` |

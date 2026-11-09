@@ -3,7 +3,7 @@
 > NER "Paris"i buldu. "Paris, Fransa"yı bağlantı veren bir varlık Paris Hilton Paris, Texas Paris, Paris (Trojan prens) mı?
 
 **Type:** Build
-**Languages:** Python
+**Languages:** Python, TypeScript
 **Prerequisites:** Phase 5 · 06 (NER), Phase 5 · 24 (Coreference Resolution)
 **Time:** ~60 minutes
 
@@ -185,7 +185,7 @@ Refuse any EL pipeline without a mention-recall baseline (you cannot evaluate a 
 
 ## Daha Fazla Okumak
 
-- [Milne, Witten (2008). Learning to Link with Wikipedia](https://www.cs.waikato.ac.nz/~ihw/papers/08-DM-IHW-LearningToLinkWithWikipedia.pdf) temel ön + bağlam yaklaşımı.
+- [Milne, Witten (2008). Learning to Link with Wikipedia](https://researchcommons.waikato.ac.nz/entities/publication/b9a0b520-abc5-47c5-a86a-da6c579893ab) temel ön + bağlam yaklaşımı.
 - [Wu et al. (2020). Zero-shot Entity Linking with Dense Entity Retrieval (BLINK)](https://arxiv.org/abs/1911.03814) yerleşim tabanlı iş atı.
 - [De Cao et al. (2021). Autoregressive Entity Retrieval (GENRE)](https://arxiv.org/abs/2010.00904) kısıtlı dekodlama ile generatif EL.
 - [Hoffart et al. (2011). Robust Disambiguation of Named Entities in Text (AIDA)](https://www.aclweb.org/anthology/D11-1072.pdf) referans kağıdı.
