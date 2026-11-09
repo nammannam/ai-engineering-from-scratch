@@ -3,7 +3,7 @@
 > Los modelos de audio-idioma 2026 razonan sobre el habla + sonido ambiental + música. Qwen2.5-Omni-7B coincide con GPT-4o Audio en MMAU-Pro. Audio Flamingo Next supera a Gemini 2.5 Pro en LongAudioBench. La brecha entre abierto y cerrado es esencialmente cerrada  excepto en tareas de audio múltiples, donde todos son casi aleatorios.
 
 **Type:** Learn
-**Languages:** Python
+**Languages:** Python, TypeScript
 **Prerequisites:** Phase 6 · 04 (ASR), Phase 12 · 03 (Vision-Language Models), Phase 7 · 10 (Audio Transformers)
 **Time:** ~45 minutes
 
@@ -129,17 +129,18 @@ El proyector es generalmente de 1-3 capas lineales. Entrenarlo en pares ASR (aud
 
 ```python
 from datasets import load_dataset
-mmau = load_dataset("MMAU/MMAU-Pro")
+mmau = load_dataset("gamma-lab-umd/MMAU-Pro", split="test")
+mcq = mmau.filter(lambda item: len(item["choices"] or []) > 1)
 
 correct = 0
-for item in mmau["test"]:
-    answer = call_model(item["audio"], item["question"], item["choices"])
-    if answer == item["correct_choice"]:
+for item in mcq:
+    answer = call_model(item["audio_path"], item["question"], item["choices"])
+    if answer == item["answer"]:
         correct += 1
-print(f"Accuracy: {correct / len(mmau['test']):.3f}")
+print(f"Accuracy: {correct / len(mcq):.3f}")
 ```
 
-Informar por categoría (habla / sonido / música / multi-audio) por separado.
+`audio_path`Puntos en los repositorios del conjunto de datos `data.zip`(alrededor de 47 GB), así que descarga y descifre antes de marcar. Este ciclo de coincidencia exacta es un control de cordura, no el punteador de referencia, por lo que su número no es comparable con los resultados publicados de MMAU-Pro. El evaluador oficial coincide con las respuestas de múltiples opciones mediante la incorporación de similitudes (NV-Embed-v2), califica las respuestas de límite abierto con un juez de LLM y verifica las respuestas que siguen las instrucciones con regex reglas: escriba predicciones a un `model_output`columna y ejecutar `evaluate_mmau_pro_comprehensive.py`de la [MMAU-Pro repo](https://github.com/sonalkum/MMAUPro)- Informar cada uno .`category`Los números agregados se esconden donde el modelo falla.
 
 ## Usalo
 
@@ -187,4 +188,4 @@ Salvo como`outputs/skill-alm-picker.md`. Seleccione LALM + subconjunto de refere
 - [NVIDIA (2025). Audio Flamingo 3](https://arxiv.org/abs/2507.08128) el líder de audio largo abierto.
 - [NVIDIA (2026). Audio Flamingo Next](https://arxiv.org/abs/2604.10905) LongAudioBench SOTA.
 - [Tang et al. (2023). SALMONN](https://arxiv.org/abs/2310.13289)Pionero en el doble codificación.
-- [MMAU-Pro leaderboard](https://mmaubenchmark.github.io/) ranking en vivo de 2026.
+- [MMAU-Pro leaderboard](https://sonalkum.github.io/mmau-pro/) ranking en vivo de 2026.

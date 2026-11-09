@@ -3,7 +3,7 @@
 > 2026 generación de música: Suno v5 y Udio v4 dominan comercial; MusicGen, Stable Audio Open y ACE-Step lideran el código abierto. El problema técnico se resuelve en su mayoría. El problema legal (Warner Music $ 500M acuerdo, UMG acuerdo) remodela el campo en 2025-2026.
 
 **Type:** Build
-**Languages:** Python
+**Languages:** Python, TypeScript
 **Prerequisites:** Phase 6 · 02 (Spectrograms), Phase 4 · 10 (Diffusion Models)
 **Time:** ~75 minutes
 
@@ -169,4 +169,4 @@ Salvo como`outputs/skill-music-designer.md`. Seleccionar el modelo, la estrategi
 - [ACE-Step](https://github.com/ace-step/ACE-Step) generador de 4B de canciones completas abierto, abril 2026.
 - [Suno v5 platform docs](https://suno.com) el líder en calidad comercial.
 - [AudioLDM2](https://arxiv.org/abs/2308.05734) difusión latente para la música + efectos sonoros.
-- [WMG-Suno settlement coverage](https://www.musicbusinessworldwide.com/suno-warner-music-settlement/) Novembre 2025 precedente.
+- [WMG-Suno settlement coverage](https://www.musicbusinessworldwide.com/warner-music-group-settles-with-suno-strikes-first-of-its-kind-deal-with-ai-song-generator/) Novembre 2025 precedente.
