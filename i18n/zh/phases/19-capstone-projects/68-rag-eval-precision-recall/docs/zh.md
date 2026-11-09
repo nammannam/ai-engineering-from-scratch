@@ -3,7 +3,7 @@
 > 如果您不能同时评分您的检索和答案,则您无法运输系统. 这两种方法不是相同的指标,并且相同的提示在不同的轴上失败.
 
 **Type:** Build
-**Languages:** Python
+**Languages:** Python, TypeScript
 **Prerequisites:** Phase 11 lessons 06 (RAG), 10 (evaluation); Phase 19 Track B foundations (lessons 20-29); Phase 19 lessons 64, 65, 66, 67
 **Time:** ~90 minutes
 
@@ -121,6 +121,7 @@ ci-rag-metric-ladder
 
 ```bash
 python3 code/main.py
+npx tsx code/main.ts
 ```
 
 输出显示了单个指标表中的每个变体的精度@k,回调@k,MRR,nDCG@k,忠实性和答案相关性.混合检索行超过回调时的重点线;重排行行超过MRR上的混合.
@@ -182,7 +183,7 @@ python3 code/main.py
 - 布克利,沃尔希斯, "评估评估措施稳定性"SIGIR 2000 - 排名指标的经典论文
 - 瑞林,凯卡莱宁, "基于收益的 IR 技术的累计评估" - nDCG论文
 - [Ragas: Automated Evaluation of RAG Pipelines](https://docs.ragas.io)
-- [Anthropic, Evaluating RAG](https://www.anthropic.com/news/evaluating-rag)
+- [Anthropic, Introducing Contextual Retrieval](https://www.anthropic.com/engineering/contextual-retrieval)- 提取1减回20的分数
 - 第十课 - 评估框架基础
 - 第19阶段课程 64-67 - 在这里评估的组件
 - 第19阶段课程69 - - 这项评估成绩的端到端管道
