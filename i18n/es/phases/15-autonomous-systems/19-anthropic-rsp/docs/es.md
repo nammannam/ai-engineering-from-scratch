@@ -3,7 +3,7 @@
 > RSP v3.0 entró en vigor el 24 de febrero de 2026, reemplazando a la política de 2023. Mitigamiento de dos niveles: lo que Anthropic hará unilateralmente frente a lo que se enmarca como una recomendación a nivel de la industria (incluyendo las normas de seguridad RAND SL-4). Añade mapas de ruta de seguridad fronteriza e informes de riesgos como documentos permanentes en lugar de entregas únicas. Se deja de cumplir el compromiso de pausa para 2023. Introduce el umbral de I+D-4 de la IA: una vez superado, Anthropic debe publicar un caso afirmativo que identifique los riesgos y mitigaciones de desalineamiento. Claude Opus 4.6 no lo cruza. En el anuncio de v3.0, Anthropic dice que "con confianza descartar esto se está volviendo difícil". SaferAI calificó el RSP 2023 en 2.2; redujeron el v3.0 a 1.9, poniendo a Anthropic en la categoría de RSP "débil" junto con OpenAI y DeepMind. Los límites cualitativos sustituyeron a los compromisos cuantitativos de 2023; la eliminación de la cláusula de pausa es la regresión más acentuada.
 
 **Type:** Learn
-**Languages:** Python (stdlib, RSP threshold decision engine)
+**Languages:** Python (stdlib, RSP threshold decision engine), TypeScript
 **Prerequisites:** Phase 15 · 06 (AAR), Phase 15 · 07 (RSI)
 **Time:** ~45 minutes
 
@@ -100,6 +100,6 @@ a5-rsp-ladder
 
 - [Anthropic — Responsible Scaling Policy v3.0](https://anthropic.com/responsible-scaling-policy/rsp-v3-0) la política completa de 32 páginas.
 - [Anthropic — RSP v3.0 announcement](https://www.anthropic.com/news/responsible-scaling-policy-v3) resumen de los cambios de v2.
-- [Anthropic — Frontier Safety Roadmap](https://www.anthropic.com/research/frontier-safety) documento permanente vinculado a partir de RSP v3.0.
-- [Anthropic — Risk Report: Claude Opus 4.6](https://www.anthropic.com/research/risk-report-claude-opus-4-6) retrospectiva del modelo fronterizo actual.
+- [Anthropic — Frontier Safety Roadmap](https://www.anthropic.com/responsible-scaling-policy/roadmap) documento permanente vinculado a partir de RSP v3.0.
+- [Anthropic — Risk Report: February 2026](https://www.anthropic.com/feb-2026-risk-report) retrospectiva sobre Claude Opus 4.6, el modelo fronterizo en su publicación.
 - [Anthropic — Measuring agent autonomy in practice](https://www.anthropic.com/research/measuring-agent-autonomy) conecta AI R&D-4 a la autonomía medida.
